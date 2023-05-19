@@ -1,0 +1,5 @@
+---
+rohit:
+  dn: uid=rohit,ou=People,dc=ballista,dc=tech
+  githubdotcomid: rohittp0
+  manager: rohit

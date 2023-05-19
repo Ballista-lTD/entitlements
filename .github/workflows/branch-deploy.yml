@@ -11,6 +11,9 @@ jobs:
     name: runner / rspec
     runs-on: ubuntu-20.04
 
+    env:
+      GITHUB_ORG_TOKEN: ${{ secrets.ORG_TOKEN }}
+
     steps:
       - name: branch-deploy
         id: branch-deploy

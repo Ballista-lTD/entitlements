@@ -11,3 +11,4 @@ gem "concurrent-ruby"
 gem "sawyer"
 gem 'debase'
 gem 'ruby-debug-ide'
+gem 'entitlements-github-plugin'
