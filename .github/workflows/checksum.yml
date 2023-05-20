@@ -11,7 +11,7 @@ permissions:
 jobs:
   rubocop:
     name: runner
-    runs-on: ubuntu-latest
+    runs-on: ubuntu-20.04
 
     steps:
       - uses: ruby/setup-ruby@cd4241788aec4fdcd3325da7068efa9b62a017af

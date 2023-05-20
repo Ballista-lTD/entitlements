@@ -1,2 +1,0 @@
-description = Admins of the github-entitlements org
-username = danhoerst

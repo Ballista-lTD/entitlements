@@ -11,6 +11,9 @@ jobs:
     name: runner / rspec
     runs-on: ubuntu-20.04
 
+    env:
+      GITHUB_ORG_TOKEN: ${{ secrets.ORG_TOKEN }}
+
     steps:
       - name: branch-deploy
         id: branch-deploy
@@ -31,7 +34,7 @@ jobs:
 
       # Here we run a deploy. It is "gated" by the IssueOps logic and will only run if the outputs from our branch-deploy step indicate that the workflow should continue
       - name: deploy
-#        if: ${{ steps.branch-deploy.outputs.continue == 'true' && steps.branch-deploy.outputs.noop != 'true' }}
+        if: ${{ steps.branch-deploy.outputs.continue == 'true' && steps.branch-deploy.outputs.noop != 'true' }}
         run: |
           set -o pipefail
           script/deploy | tee deploy.out

@@ -11,42 +11,29 @@ rescue Exception
 end
 -%>
 ---
-backends:
-  dockerized-ldap:
-    ldap_binddn: "cn=admin,dc=example,dc=org"
-    ldap_bindpw: "admin"
-    ldap_uri: "ldaps://127.0.0.1"
-    disable_ssl_verification: true
-    person_dn_format: uid=%KEY%,ou=People,dc=example,dc=org
-    type: ldap
 configuration_path: ../
-extras:
-  ldap_group: {}
-
 groups:
-  dummy-ou:
-    type: dummy
-  dummy-ou-renamed:
-    type: dummy
-    dir: dummy-ou-special
-  entitlements:
-    backend: dockerized-ldap
-    base: ou=Entitlements,ou=Groups,dc=example,dc=org
-  entitlements/strictly-audited:
-    backend: dockerized-ldap
-    base: ou=strictly-audited,ou=Entitlements,ou=Groups,dc=example,dc=org
-    dir: entitlements/strictly-audited
-    create_if_missing: true
+  github.com/Ballista-lTD/org:
+    addr: https://api.github.com
+    base: ou=org,ou=Ballista-lTD,ou=GitHub,dc=github,dc=com
+    dir: github.com/Ballista-lTD/org
+    org: Ballista-lTD
+    token: <%= ENV["GITHUB_ORG_TOKEN"] %>
+    type: "github_org"
+
+  github.com/Ballista-lTD/teams:
+    addr: https://api.github.com
+    base: ou=teams,ou=Ballista-lTD,ou=GitHub,dc=github,dc=com
+    dir: github.com/Ballista-lTD/teams
+    org: Ballista-lTD
+    token: <%= ENV["GITHUB_ORG_TOKEN"] %>
+    type: "github_team"
+
 people:
-  ldap:
-    type: ldap
+  yaml:
+    type: yaml
     config:
-      base: ou=People,dc=example,dc=org
-      ldap_binddn: "cn=admin,dc=example,dc=org"
-      ldap_bindpw: "admin"
-      ldap_uri: "ldaps://127.0.0.1"
-      disable_ssl_verification: true
-      person_dn_format: uid=%KEY%,ou=People,dc=example,dc=org
-      additional_attributes:
-        - shellentitlements
-people_data_source: ldap
+      filename: config/people.yaml
+      person_dn_format: uid=%KEY%,ou=People,dc=ballista,dc=tech
+
+people_data_source: yaml
