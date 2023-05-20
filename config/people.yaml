@@ -1,5 +1,9 @@
 ---
-rohit:
+rohittp0:
   dn: uid=rohit,ou=People,dc=ballista,dc=tech
   githubdotcomid: rohittp0
-  manager: rohit
+  manager: rohittp0
+varshashaheen:
+  dn: uid=rohit,ou=People,dc=ballista,dc=tech
+  githubdotcomid: varshashaheen
+  manager: rohittp0
