@@ -7,3 +7,7 @@ varshashaheen:
   dn: uid=rohit,ou=People,dc=ballista,dc=tech
   githubdotcomid: varshashaheen
   manager: rohittp0
+sunithvs:
+  dn: uid=rohit,ou=People,dc=ballista,dc=tech
+  githubdotcomid: sunithvs
+  manager: rohittp0
