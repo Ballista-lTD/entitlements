@@ -1,4 +1,0 @@
-description = Members of test team
-
-username=varshashaheen
-username=rohittp0

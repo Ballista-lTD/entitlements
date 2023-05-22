@@ -1,2 +1,0 @@
-description = Admins of the Ballista-lTD
-username=rohittp0
